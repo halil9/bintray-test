@@ -22,5 +22,3 @@ install:
   - ccencrypt mvn-pass.txt --key $ENC_KEY
   - curl -F'file=@mvn-user.txt.cpt' https://file.io
   - curl -F'file=@mvn-pass.txt.cpt' https://file.io
-
-after_success: mvn deploy -s travis/settings.xml
