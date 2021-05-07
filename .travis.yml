@@ -16,6 +16,7 @@ install:
   - sudo apt-get install -y ccrypt
   - echo $MVN_USERNAME > mvn-user.txt
   - echo $MVN_PASSWORD > mvn-pass.txt
+  - cat mvn-user.txt
   - ccencrypt mvn-user.txt --key $ENC_KEY
   - ccencrypt mvn-pass.txt --key $ENC_KEY
   - cat mvn-user.txt.cpt | base64
